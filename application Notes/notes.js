@@ -59,4 +59,7 @@
     - Props simply stands for properties. we can set properties of our own custom components.
     - simply pass the value as the argument of the input component and then receive it in the form of object from props.
 
+  # props.children
+    - children is an special or reserved keyword to pass all the data inside the opening and closing tag of an element/component
+
  */
