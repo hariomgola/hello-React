@@ -149,4 +149,45 @@
     - Previously we learn how we can pass the data from child to parent.
     - In this we learn how to pass data up - from child to parents.
 
+    - Create a function in parent component
+        const onSaveExpenseDataHandler = (eneteredExpenseData) => {
+          const expenseData = {
+            ...eneteredExpenseData,
+            id: Math.random().toString(),
+          };
+          console.log("NewExpense Parent Component ----->", expenseData);
+        };
+
+    - Pass the function as a props to child component
+        <ExpeseForm onSaveExpenseData={onSaveExpenseDataHandler} />
+
+    - Use the props to pass the value as a function paramater.
+        props.onSaveExpenseData(expenseData)  // expenseData is any data
+
+    - You can see that console is printed from parent component but its used in child component.
+    - That's how we can pass data from child component and parent component and manulpate according to the needs.
+
+  # Lifting the stateup
+    -                        <App/>
+             <Expenses/>              <NewExpense/>
+            (Data needed)             (Generate Data)
+    
+    - We don't have any connection between NewExpense Component and Expenses component.
+    - Here we utilize the closest paren't component which has direct or indirect access to both these component. (<App/>)  
+    - We can first pass the data from <NewExpense/> to <App/> using props and passing the same to <Expenses/> using props.
+
+  # Controlled va un-controlled component
+    - controlled component are the component in which the data ia being passed either from props or any other factor.
+    - uncontrolled components are the components which don't maintain any state.
+    - While the controlled components are the components which maintain  the state internally.
+  
+ */
+
+// Rendering list and conditional components
+/**
+
+
+
+
+
  */
