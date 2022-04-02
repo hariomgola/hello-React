@@ -1,8 +1,7 @@
 // importing other component
-import ExpenseItem from "./components/ExpenseItem";
-import Expenses from "./components/Expenses";
-
-function App() {
+import Expenses from "./components/Expenses/Expenses";
+import NewExpense from "./components/NewExpense/NewExpense";
+const App = () => {
   const expenses = [
     {
       id: "e1",
@@ -31,10 +30,10 @@ function App() {
   ];
   return (
     <div>
-      <h2>React Expense Tracker</h2>
-      <Expenses items={expenses} />
+      <NewExpense />
+      <Expenses expenses={expenses} />
     </div>
   );
-}
+};
 
 export default App;

@@ -1,35 +1,11 @@
+import Card from '../UI/Card'
 import ExpenseItem from "./ExpenseItem";
 import "./Expenses.css";
 
 function Expense(props) {
-  const expenses = [
-    {
-      id: "e1",
-      title: "Monitor",
-      amount: 10000,
-      date: new Date(2020, 7, 14),
-    },
-    {
-      id: "e2",
-      title: "Intel-Nuc",
-      amount: 50000,
-      date: new Date(2020, 7, 14),
-    },
-    {
-      id: "e3",
-      title: "Iphone",
-      amount: 80000,
-      date: new Date(2020, 7, 14),
-    },
-    {
-      id: "e4",
-      title: "MacBook",
-      amount: 135000,
-      date: new Date(2020, 7, 14),
-    },
-  ];
+  const expenses = props.expenses
   return (
-    <div className="expenses">
+    <Card className="expenses">
       <ExpenseItem
         title={expenses[0].title}
         amount={expenses[0].amount}
@@ -50,7 +26,7 @@ function Expense(props) {
         amount={expenses[3].amount}
         date={expenses[3].date}
       />
-    </div>
+    </Card>
   );
 }
 
