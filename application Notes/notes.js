@@ -219,3 +219,47 @@
        }
 
  */
+
+// Styling React Component
+/**
+  # Styling React Component
+    - Coditional and Dynamic way
+    - Two popular approach for scoping style in component
+         - Styled components (library)
+         - CSS Modules (Approach)
+  
+  # Setting Dynamic Styling - Inline Style -
+    - Using a conditional
+    - style = {{color: !isValid ? 'red' : 'black'}} // change color
+    - style = {{borderColor: !isValid ? 'red' : 'black', background : !isValid ? 'red' : 'transparent'}} // changing bordercolor
+    // use camelCase in javascript file instead of simple bordercolor
+
+  # Setting Dynamic style - Using Dynamic css clases - 
+    - using a conditional statement in className
+    - Conditions  | .form-controls inputs{} | .form-controls.invalid inputs {} |
+    - className = {`form-control ${!isValid ? 'invalid' : ''}`}
+
+  # Introduction to Styled Components
+    - URL - https://styled-components.com/
+    - Styled components are the package which help in building styles listed to into particular component.
+    - npm install --save styled-components
+           import styled from 'styles-components'
+           const Button = styles.button`
+             // directly paste style over here
+             &:focus // to use the sudo selectors
+             @media (min -width : 768px){
+               width: auto;
+             } 
+           `;
+
+  # Styling using CSS Modules (Scoped Styles)
+    - URL - https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/
+    - Css modules are the features available to the modules which are only available to support it.
+    - Name the simple css class to   Button.css -> Button.module.css
+    - import styles from './Button.module.css'
+    - While usng this approach we can get all css classes as a object in style and then we can assign whatever we want to apply.
+    - For example className = {style.button} 
+
+  # Dynamic style Using CSS Modules
+    - <div className = { `${styles['form-control']} ${!isvalid && styles.invalid}`} >
+ */
