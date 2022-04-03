@@ -185,9 +185,37 @@
 
 // Rendering list and conditional components
 /**
+  # Rendering list Data
+    - {} we need single curly braces for this beacause we want to execute the dynamic expression in the code.
+    - { props.expenses.map(expense => <ExpenseItem 
+                                        title = expense.title
+                                        amount = expense.amount
+                                        date = expense.date />) }
 
+  # Understanding key in Dynamic list randering
+    - React has a special concept when it comes to rendering list of data. Without performance losses or bugs.
+    - without using key react will add the next list item at last and refreshes the full list.
+    - React will refreshes all the elements in the list and refreshes.
+    - With the help of key we can tell the react to identify the particular set of element and only add or refreshes that element.
 
+  # Output conditional component
+    - We can use the turnary opertor in {}
+    - {filterExpenses.length === 0 ? <p> No Expenses found </p> : ( // our custom component )}
+    - we can also use single operator in turnary function using && operator
+    - {filterExpenses.length === 0  && <p> No Expenses found </p> }
+    - {filterExpenses.length > 0  && ( //our custom component ) }
 
-
+    - Instead of doing the above approach we can also use the approach in our js code
+    -  let expensesContent = <p>No expense found.</p>
+       if(filterExpenses.length > 0){
+         expenseContent = filterExpenses.map((expense)=>(
+           <ExpenseItem
+              key={expense.id}
+              title={expense.title}
+              amount={expense.amount}
+              date={expense.date}
+            />
+         ))
+       }
 
  */
