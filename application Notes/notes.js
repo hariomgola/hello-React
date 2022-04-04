@@ -263,3 +263,74 @@
   # Dynamic style Using CSS Modules
     - <div className = { `${styles['form-control']} ${!isvalid && styles.invalid}`} >
  */
+
+// Debugging React Error
+/**
+  # React Dev Tools
+    - you can find the react dev tool on chrome we store.
+ */
+
+// Fragments,Portals & Refs
+/**
+  # JSX Limitation
+    - JSX only returns one root element only.
+
+  # Overcome JSX limitation by wrapper function
+    - const wrapper = (props) =>{
+      return props.children;
+    } 
+  
+  # Fragments
+    - <React.Fragment></React.Fragment>   or  <></>
+    - Will Add empty wrapper to the JSX code.
+
+  # Portals
+    - Portals is used to keep the structure of an html page
+    - Example our component is nested with n component and in deep of the application. We want to show some popup of something to main div.
+    - In the above condition portals come into play. Where we need to show something to direct child of the body.
+    - Portals need two thing
+        ~ Place where you wana port the component to
+        ~ Then you need to let the component know that it should have a portal to that place.
+        
+    - In app.js   <div id="backdrop-root"></div>  | <div id="overlay-root"></div>
+
+    - const BackDrop = (props) => { return <div className={classes.backdrop} onClick={props.onConfirm} />}
+    - const ModalOverlay = (props) => { // JSX code }
+
+    - After spliting the component into 2 parts backdrop and modalOverlay
+    - For using Portals we can use the ReactDOM which is find in 'react-dom' library.
+    - import ReactDOM from 'react-dom'
+
+    - We can use ReactDOM.createPortal() and it takes 2 arguments. 
+    - first one is react node and second arument is the contained to which real dom is rendered.
+    - {ReactDOM.createPortal(  <Backdrop onClick={props.onConfirm}/>, document.getElementById('backdrop-root')  )}
+
+  # refs (references)
+    - useRef is the react hook. They allow us to access other DOM element and work with them.
+    - useRef takes the defalt valua and return a value which allow us to work with that value or element which we are going to wrok on it.
+    - We have to tell react that we need to use the element by using and special props which is 'ref' props
+
+       const nameInputRef = useRef()
+       <input type="text"
+        ref = {nameInputref} />
+    - Ref always generate the object which always has the current hold the actual value of which ref is connected with.
+    - Its stored the actual DOM node which it is connected to and you can manipulate according to your needs.
+    - console.log(nameInputRef.current.value) // returns the actual value
+    - const enteredName = nameInputref.current.value;
+
+    // reset the value after submit
+    nameInputref.current.value = ''
+
+    - Insted of reading value on every key stroke press we can use ref
+
+  # Controlled vs UnControlled Components
+    - uncontrolled components are the component whose value is not controlled by react we need to use the default behaviour to the html elements.
+    - Controlled components are the components which value can be controlled with the help of react concepts such as useState
+
+ */
+
+// Handling Side Effect, Using Reducers & Using the Context API
+/**
+
+ */
+ 
